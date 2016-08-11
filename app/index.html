@@ -16,10 +16,39 @@
   </head>
   <body>
     {{content-for "body"}}
+    <input id="srch" type="text" />
+<button onClick=searchword()>Search</button>
+<p id="wrd">We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.</p>
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/ember-quickstart.js"></script>
 
     {{content-for "body-footer"}}
   </body>
+  <script>
+
+function searchword() {
+
+   var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+
+  result = string.match(/(\bt\S+\b)/ig);
+
+   alert(result);
+
+     var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+
+   result = string.match(/\b\w+(e)\b/ig);
+
+    alert(result);
+
+
+    var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+
+  result = string.match(/\bt\w+(e)\b/ig);
+
+   alert(result);
+   }
+
+
+</script>
 </html>
