@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EmberQuickstart</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EmberQuickstart</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> {{content-for "head"}}
 
-    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link rel="stylesheet" href="{{rootURL}}assets/ember-quickstart.css">
+  <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link rel="stylesheet" href="{{rootURL}}assets/ember-quickstart.css"> {{content-for "head-footer"}}
+</head>
 
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
-    <input id="srch" type="text" />
-<button onClick=searchword()>Search</button>
-<p id="wrd">We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.</p>
+<body>
+  {{content-for "body"}}
+  <input id="srch" class="input" type="text" />
+  <button onClick=searchword()>Search</button>
+  <p id="wrd">We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity,
+    do ordain and establish this Constitution for the United States of America.</p>
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/ember-quickstart.js"></script>
+  <script src="{{rootURL}}assets/vendor.js"></script>
+  <script src="{{rootURL}}assets/ember-quickstart.js"></script>
 
-    {{content-for "body-footer"}}
-  </body>
-  <script>
+  {{content-for "body-footer"}}
+</body>
+<script>
+  function searchword() {
 
-function searchword() {
+    var string =
+      "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
 
-   var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+    if (document.querySelector('.input').value === 't') {
+      result = string.match(/(\bt\S+\b)/ig)
 
-  result = string.match(/(\bt\S+\b)/ig);
+      alert(result);
 
-   alert(result);
+      {
+        console.log(result);
+      }
+    } else if (document.querySelector('.input').value === 'e') {
+      result = string.match(/\b\w+(e)\b/ig);
 
-     var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+      alert(result);
+      console.log(result);
 
-   result = string.match(/\b\w+(e)\b/ig);
+    } else if (document.querySelector('.input').value === 't,e') {
+      result = string.match(/\bt\w+e\b/ig);
 
-    alert(result);
+      alert(result);
+      console.log(result);
 
+    } else {
+      alert("that's not what I wanted")
+    }
+  }
 
-    var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
-
-  result = string.match(/\bt\w+(e)\b/ig);
-
-   alert(result);
-   }
-
-
+  //
 </script>
+// //
+<script>
+  //  var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+
+  //    result = string.match(/\b\w+(e)\b/ig);
+  //
+  //     alert(result);
+  //    {console.log(result);}}
+  //
+  //
+</script>
+// //
+<script>
+  //
+  //
+  //
+  //     // var string = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+  //
+  //   result = string.match(/\bt\w+(e)\b/ig);
+  //
+  //    alert(result);
+  //    {console.log(result);}}
+  //
+  //
+  //
+  //
+</script>
+//
+
 </html>
